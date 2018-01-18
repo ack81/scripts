@@ -1,0 +1,46 @@
+---
+# Need solutions for shared actions
+# Possibly look for ducplicate actions and make those share and a pre-run step
+# Maybe enfor shared = True by default and require to specify false where needed
+recurring "Sync all Resource Handlers",
+  :enabled => True,
+  :schedule => '0 12 * * *',
+  :action => "sync_all_resource_handlers", # Filename of the .py
+  # can use action name for name.json for metadata
+  :git => "git://github.com/ack81/cloudbolt/actions.git",
+  :ref => '1.0.0'
+rule "Update Cache Files",
+  :enabled => True,
+  :if_action => "check_for_cache_update", # Filename of the .py
+  :then_action => "update_cache_files", # Filename of the .py
+  :git => "git://github.com/ack81/cloudbolt/actions.git",
+  :ref => '1.0.0'
+server "My Server Action",
+  :enabled => True,
+  :action => "my_server_action", # Filename of the .py
+  :git => "git://github.com/ack81/cloudbolt/actions.git",
+  :ref => '1.0.0'
+xui "service_now",
+  :git => "https://github.com/ack81/cloudbolt/xui_service_now.git"
+  :ref => '1.0.0'
+xui "device42",
+  :git => "https://github.com/ack81/cloudbolt/xui_device42.git"
+  :ref => '1.0.0'
+xui "cb_support",
+  :git => "https://github.com/ack81/cloudbolt/xui_cb_support.git"
+  :ref => '1.0.0'
+xui "cloud_passage",
+  :git => "https://github.com/ack81/cloudbolt/xui_cloud_passage.git"
+  :ref => '1.0.0'
+xui "chef",
+  :git => "https://github.com/ack81/cloudbolt/xui_chef.git"
+  :ref => '1.0.0'
+xui "azure",
+  :git => "https://github.com/ack81/cloudbolt/xui_azure.git"
+  :ref => '1.0.0'
+xui "tintri",
+  :git => "https://github.com/ack81/cloudbolt/xui_tintri.git"
+  :ref => '1.0.0'
+xui "active_users",
+  :git => "https://github.com/ack81/cloudbolt/xui_active_users.git"
+  :ref => '1.0.0'

@@ -1,0 +1,23 @@
+{
+  "name": "service_now",
+  "version": "2.3.0",
+  "author": "akinney",
+  "summary": "API wrapper and server tab for Service Now",
+  "description": "Module for Apache configuration",
+  "license": "",
+  "source_url": "git://github.com/puppetlabs/puppetlabs-apache.git",
+  "requirements": {
+    "cb_version": ">= 7.0.1"
+  },
+  "dependencies": [
+    {
+      "name":"",
+      "version":""
+    }
+  ],
+  "osbuild_support": [
+    [ "RedHat",
+      "CentOS"
+    ]
+  ]
+}
